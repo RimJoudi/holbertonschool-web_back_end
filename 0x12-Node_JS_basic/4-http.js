@@ -1,8 +1,8 @@
 const http = require('http');
 
-const PORT = 1245;
-
 const HOSTNAME = '127.0.0.1';
+
+const PORT = 1245;
 
 const app = http.createServer((req, res) => {
   res.statusCode = 200;
@@ -11,5 +11,7 @@ const app = http.createServer((req, res) => {
 });
 
 app.listen(PORT, HOSTNAME, () => {
- /* console.log(`server is running at http://${HOSTNAME}:${PORT}`); */
+  /* console.log(`server is running at http://${HOSTNAME}:${PORT}`); */
 });
+
+module.exports = app;
