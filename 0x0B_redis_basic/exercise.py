@@ -13,7 +13,7 @@ def call_history(method: Callable) -> Callable:
     key = method.__qualname__
     inputs = key + ":inputs"
     outputs = key + ":outputs"
-    
+
     @wraps(method)
     def wrapper(self, *args, **kwds):
         """ wrapped function """
@@ -27,7 +27,6 @@ def call_history(method: Callable) -> Callable:
 def count_calls(method: Callable) -> Callable:
     """ Counts number of calls to a class method """
     key = method.__qualname__
-    
 
     @wraps(method)
     def wrapper(self, *args, **kwargs):
@@ -68,7 +67,7 @@ class Cache:
     def get_int(self, data: bytes) -> int:
         """ Convert bytes to int """
         return int.from_bytes(data, byteorder)
-    
+
 
 def replay(method: Callable):
     """ display the history of calls of a particular function """
