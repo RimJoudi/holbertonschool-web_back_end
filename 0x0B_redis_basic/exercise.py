@@ -8,6 +8,13 @@ from sys import byteorder
 from functools import wraps
 
 
+def call_history(method: Callable) -> Callable:
+    """ store the history of inputs and outputs for a particular function """
+    key = method.__qualname__
+    inputs = key + ":inputs"
+    outputs = key + ":outputs"
+
+
 def count_calls(method: Callable) -> Callable:
     """ Counts number of calls to a class method """
     key = method.__qualname__
